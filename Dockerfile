@@ -5,7 +5,7 @@ RUN mvn -f /home/app/pom.xml clean package -DskipTests
 
 FROM openjdk:17-jdk-alpine
 EXPOSE 8080
-COPY --from=build /home/app/target/render-Poc-cloud*.jar /usr/local/lib/app.jar
+COPY --from=build /home/app/target/render-PoC-cloud*.jar /usr/local/lib/app.jar
 COPY start.sh start.sh
 RUN chmod +x start.sh
 ENTRYPOINT ["./start.sh"]
